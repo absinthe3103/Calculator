@@ -1,21 +1,24 @@
 package com.houarizegai.calculator.ui;
 
-import com.houarizegai.calculator.theme.properties.Theme;
-import com.houarizegai.calculator.theme.ThemeLoader;
-
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.ItemEvent;
 import java.util.Map;
 import java.util.regex.Pattern;
-import java.awt.Color;
-import javax.swing.*;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+
+import com.houarizegai.calculator.theme.ThemeLoader;
+import com.houarizegai.calculator.theme.properties.Theme;
 import static com.houarizegai.calculator.util.ColorUtil.hex2Color;
 
 public class CalculatorUI {
 
-    private static final String FONT_NAME = "Comic Sans MS";
+    private static final String FONT_NAME = "Segoe UI";
     private static final String DOUBLE_OR_NUMBER_REGEX = "([-]?\\d+[.]\\d*)|(\\d+)|(-\\d+)";
     private static final String APPLICATION_TITLE = "Calculator";
     private static final int WINDOW_WIDTH = 410;
@@ -120,7 +123,7 @@ public class CalculatorUI {
         inputScreen.setBounds(columns[0], rows[0], 350, 70);
         inputScreen.setEditable(false);
         inputScreen.setBackground(Color.WHITE);
-        inputScreen.setFont(new Font(FONT_NAME, Font.PLAIN, 33));
+        inputScreen.setFont(new Font(FONT_NAME, Font.BOLD, 36));
         window.add(inputScreen);
     }
 
@@ -520,7 +523,7 @@ public class CalculatorUI {
     private JButton createButton(String label, int x, int y) {
         JButton btn = new JButton(label);
         btn.setBounds(x, y, BUTTON_WIDTH, BUTTON_HEIGHT);
-        btn.setFont(new Font("Comic Sans MS", Font.PLAIN, 28));
+        btn.setFont(new Font(FONT_NAME, Font.BOLD, 24));
         btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btn.setFocusable(false);
         window.add(btn);
