@@ -29,7 +29,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -37,6 +37,7 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
+                    <argLine>-Djava.awt.headless=true</argLine>
                     <archive>
                         <manifest>
                             <mainClass>com.houarizegai.calculator.App</mainClass>
