@@ -51,6 +51,7 @@ public class CalculatorUI {
     private JButton btnNine;
     private JButton btnPoint;
     private JButton btnEqual;
+    private JButton btnPi; 
     private JButton btnRoot;
     private JButton btnPower;
     private JButton btnLog;
@@ -146,6 +147,7 @@ public class CalculatorUI {
                     btnRoot.setVisible(true);
                     btnPower.setVisible(true);
                     btnLog.setVisible(true);
+                    btnPi.setVisible(true); //BDN
                     break;
             }
         });
@@ -451,6 +453,13 @@ public class CalculatorUI {
         });
         btnEqual.setSize(2 * BUTTON_WIDTH + 10, BUTTON_HEIGHT);
 
+        
+        btnPi = createButton("π", columns[4], rows[5]);
+        btnPi.addActionListener(event -> {
+            inputScreen.setText(String.valueOf(Math.PI));
+            shouldAppendToDisplay = false;
+        });
+
         btnRoot = createButton("√", columns[4], rows[1]);
         btnRoot.addActionListener(event -> {
             if (!Pattern.matches(DOUBLE_OR_NUMBER_REGEX, inputScreen.getText()))
@@ -508,6 +517,8 @@ public class CalculatorUI {
             }
         });
         btnLog.setVisible(false);
+
+        btnPi.setVisible(false); 
     }
 
     private JComboBox<String> createComboBox(String[] items, int x, int y, String toolTip) {
@@ -547,7 +558,8 @@ public class CalculatorUI {
         btnSeven.setForeground(hex2Color(theme.getTextColor()));
         btnEight.setForeground(hex2Color(theme.getTextColor()));
         btnNine.setForeground(hex2Color(theme.getTextColor()));
-        btnPoint.setForeground(hex2Color(theme.getTextColor()));
+        btnPoint.setForeground(hex2Color(theme.getTextColor()));        
+        btnPi.setForeground(hex2Color(theme.getTextColor()));           
         btnClear.setForeground(hex2Color(theme.getTextColor()));
         btnBackspace.setForeground(hex2Color(theme.getTextColor()));
         btnModulus.setForeground(hex2Color(theme.getTextColor()));
