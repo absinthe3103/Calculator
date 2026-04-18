@@ -104,6 +104,14 @@ public class CalculatorUI {
         }
     }
 
+    public void triggerPiButton() {
+        inputScreen.setText(String.valueOf(Math.PI));
+    }
+
+    public String getInputScreenText() {
+        return inputScreen.getText();
+    }
+
     private void initThemeSelector() {
         comboTheme = createComboBox(themesMap.keySet().toArray(new String[0]), 230, 30, "Theme");
         comboTheme.addItemListener(event -> {
