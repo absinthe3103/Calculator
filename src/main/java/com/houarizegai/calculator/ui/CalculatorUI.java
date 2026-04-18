@@ -63,6 +63,16 @@ public class CalculatorUI {
 
     private final Map<String, Theme> themesMap;
 
+    // Getter for testing
+    public String getInputScreenText() {
+        return inputScreen.getText();
+    }
+
+    // Method to trigger pi button for testing
+    public void triggerPiButton() {
+        btnPi.doClick();
+    }
+
     public CalculatorUI() {
         themesMap = ThemeLoader.loadThemes();
 

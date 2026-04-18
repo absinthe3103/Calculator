@@ -21,4 +21,11 @@ class CalculatorUITest {
     void testCalculation(double firstNumber, double secondNumber, char operator, double expectedResult) {
         assertEquals(expectedResult, calculatorUI.calculate(firstNumber, secondNumber, operator));
     }
+
+    @org.junit.jupiter.api.Test
+    void testPiButton() {
+        calculatorUI.triggerPiButton();
+        String result = calculatorUI.getInputScreenText();
+        assertEquals(String.valueOf(Math.PI), result);
+    }
 }
